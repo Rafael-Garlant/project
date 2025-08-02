@@ -1,0 +1,188 @@
+:root {
+  --darkBlue: #004d7a;
+  --blue: #0077b6;
+  --lightBlue: #90e0ef;
+  --lightGreen: #48bb78;
+  --darkGreen: #2f855a;
+  --white: #e6fffa;
+  --grayLight: #f4f7f8;
+  --grayMedium: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--lightBlue), var(--white));
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--darkBlue);
+}
+
+.container {
+  background: var(--white);
+  padding: 35px 40px;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 77, 122, 0.15);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--blue);
+}
+
+
+form fieldset {
+  border: 2px solid var(--grayMedium);
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  color: var(--darkBlue);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+form fieldset:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 8px var(--lightBlue);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form legend {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0 8px;
+  color: var(--blue);
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form fieldset label {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 8px;
+
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+form fieldset input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--blue);
+}
+
+
+form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--darkBlue);
+}
+
+form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1.8px solid var(--grayMedium);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 6px var(--lightBlue);
+}
+
+button {
+  width: 100%;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--darkBlue);
+}
+
+p {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--darkBlue);
+}
+
+p a {
+  color: var(--lightGreen);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: var(--darkGreen);
+  text-decoration: underline;
+}
+
+#campos-medico {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: var(--grayLight);
+  border: 2px solid var(--grayMedium);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 77, 122, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  display: none;
+}
+
+#campos-medico label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--darkBlue);
+}
+
+#campos-medico input[type="text"],
+#campos-medico select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1.8px solid var(--grayMedium);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: var(--white);
+  color: var(--darkBlue);
+}
+
+#campos-medico input:focus,
+#campos-medico select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 6px var(--lightBlue);
+}
