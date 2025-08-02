@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
 
-
+<!--  -->
 </head>
 
 <body>
@@ -17,7 +17,7 @@
   <div class="container">
     <h1>Bem-Vindo(a) ao seu cadastro!</h1>
 
-    <form action="">
+    <form action="" novalidate>
       <fieldset>
         <legend>Você é:</legend>
         <label>
@@ -30,20 +30,21 @@
       </fieldset>
 
       <label for="full_name"> Nome completo
-        <input type="text" required>
-      </label>
-      <label for="email"> Seu E-mail
-        <input type="email" required>
+        <input type="text" required class="full_name">
+        <p class="errorMessage">Digite seu nome completo</p>
       </label>
 
-      <div id="campos-medico">
+      <label for="email"> Seu E-mail
+        <input type="email" required class="email">
+      </label>
+
+      <div id="campos-medico"> 
         <label for="crm">CRM
           <input
-            type="text"
+            type="number"
             id="crm"
             name="crm"
             placeholder="Ex: 123456"
-            required
             maxlength="6"
             minlength="6"
             pattern="\d{6}"
@@ -52,7 +53,7 @@
         </label>
 
         <label for="uf_crm">UF do CRM
-          <select id="uf_crm" name="uf_crm" required>
+          <select id="uf_crm" name="uf_crm">
             <option value="">Selecione o estado</option>
             <option value="AC">AC</option>
             <option value="AL">AL</option>
@@ -85,7 +86,7 @@
         </label>
 
         <label for="especialidade">Especialidade
-          <select id="especialidade" name="especialidade" required>
+          <select id="especialidade" name="especialidade">
             <option value="">Selecione uma especialidade</option>
             <option value="clinico">Clínico Geral</option>
             <option value="cardiologia">Cardiologia</option>
@@ -101,10 +102,10 @@
       </div>
 
       <label for="password"> Digite sua senha
-        <input type="password" required>
+        <input type="password" required class="password">
       </label>
       <label for="password_confirm"> Confirme sua senha
-        <input type="password" required>
+        <input type="password" required class="confirm_password">
       </label>
 
       <button>Registrar</button>
@@ -113,6 +114,7 @@
   </div>
 
   <script src="../js/register-form.js"></script>
+  <script src="../js/validationForm.js"></script>
 </body>
 
 </html>

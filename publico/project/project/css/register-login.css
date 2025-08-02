@@ -2,11 +2,16 @@
   --darkBlue: #004d7a;
   --blue: #0077b6;
   --lightBlue: #90e0ef;
+
   --lightGreen: #48bb78;
   --darkGreen: #2f855a;
+  
   --white: #e6fffa;
   --grayLight: #f4f7f8;
   --grayMedium: #cbd5e1;
+
+  --lightRed: #f28b82;
+  --darkRed: #b00020;  
 }
 
 * {
@@ -52,6 +57,7 @@ form fieldset {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 form fieldset:hover {
@@ -185,4 +191,25 @@ p a:hover {
   outline: none;
   border-color: var(--blue);
   box-shadow: 0 0 6px var(--lightBlue);
+}
+
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.input-error {
+  box-shadow: 0 0 6px var(--lightRed);
+  animation: shake 0.3s ease;
+}
+.errorMessage {
+  color: var(--darkRed);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  animation: shake 0.3s ease;
+  display: none;
 }
