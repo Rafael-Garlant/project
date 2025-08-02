@@ -360,6 +360,71 @@ nav{
 }
 
 
+#footer {
+  background-color: var(--darkBlue);
+  color: var(--white);
+  padding: 25px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--lightGreen);
+}
+
+.footer-nav a {
+  color: var(--lightBlue);
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--lightGreen);
+}
+
+.footer-social a {
+  font-size: 1.4rem;
+  margin-right: 15px;
+  color: var(--lightBlue);
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: var(--lightGreen);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--lightBlue);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-nav {
+    margin: 15px 0;
+  }
+}
+
 
 @keyframes fadeSlideUp {
   from {
