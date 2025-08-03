@@ -38,26 +38,59 @@ function validForm(){
 }
 
 function validFullName(){
-    const fullName = fullNameInput.value.
-    trim().
-    split(" ").
-    filter(word => word.length >= 2);
+  // const fullName = fullNameInput.value
+  // .trim()
+  // .split(" ")
+  // .filter(word => word.length >= 2);
+
+  // if (fullName.length < 2) {
+  //   warnAnimation(fullNameInput, errorMessage);
+  //   return false;
+  // }
+
+  const rawFullName = fullNameInput.value.trim();
+console.log("Nome bruto:", rawFullName);
+
+const fullName = rawFullName
+  .split(" ")
+  .filter(word => word.length >= 2);
+
+console.log("Palavras válidas:", fullName);
+console.log("Quantidade de palavras válidas:", fullName.length);
+
+if (fullName.length < 2) {
+  warnAnimation(fullNameInput, errorMessage);
+  return false;
+}
+    const strContainsNumber = /[^a-zA-Z\s]/.test(fullName);
+    
 
     fullNameInput.classList.remove("input-error");
     errorMessage.style.display = 'none';
 
-    if (fullName <=2){
-        fullNameInput.classList.remove("input-error");
-        errorMessage.style.display = 'block';
-        void fullNameInput.offsetWidth;
-        void errorMessage.offsetWidth;
-        fullNameInput.classList.add("input-error");
+    if (fullNameInput.value.length > 50 || fullNameInput.value.length < 5) {
+      warnAnimation(fullNameInput, errorMessage); 
+      return false;
+    }
+    
+
+    if(strContainsNumber){
+      warnAnimation(fullNameInput, errorMessage)
+      return false;
     }
 
 
 }
 
-
+function warnAnimation(element, element2){
+  element.classList.remove('input-error');
+  element2.style.display = 'none';
+  void fullNameInput.offsetWidth;
+  void errorMessage.offsetWidth;
+  element2.style.display = 'block';
+  element.classList.add("input-error");
+  
+}
 /* Para usar no futuro
    const password = passwordInput.value.trim();
     const confirmPassword = confirmPasswordInput.value.trim();
