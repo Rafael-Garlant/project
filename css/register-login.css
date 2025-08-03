@@ -206,10 +206,19 @@ p a:hover {
   box-shadow: 0 0 6px var(--lightRed);
   animation: shake 0.3s ease;
 }
-.errorMessage {
+
+.errorMessage, .emailError, .crmError, .ufCrmError, .especialityError, .passwordError, .confirmPasswordError {
   color: var(--darkRed);
   font-size: 0.9rem;
   margin-top: 5px;
   animation: shake 0.3s ease;
   display: none;
+}
+
+[role="tooltip"] {
+  display: none;
+}
+
+input:focus + [role="tooltip"] {
+  display: block;
 }

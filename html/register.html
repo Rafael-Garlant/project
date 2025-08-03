@@ -31,11 +31,12 @@
 
       <label for="full_name"> Nome completo
         <input type="text" required class="full_name">
-        <p class="errorMessage">Digite seu nome completo</p>
+        <p class="errorMessage">Digite seu nome completo.</p>
       </label>
 
       <label for="email"> Seu E-mail
         <input type="email" required class="email">
+        <p class="errorMessage emailError">Digite seu email.</p>
       </label>
 
       <div id="campos-medico"> 
@@ -44,16 +45,18 @@
             type="number"
             id="crm"
             name="crm"
+            class="crm"
             placeholder="Ex: 123456"
             maxlength="6"
             minlength="6"
             pattern="\d{6}"
             inputmode="numeric"
           >
+          <p class="errorMessage crmError">Digite seu CRM.</p>
         </label>
 
         <label for="uf_crm">UF do CRM
-          <select id="uf_crm" name="uf_crm">
+          <select id="uf_crm" name="uf_crm" class="uf_crm">
             <option value="">Selecione o estado</option>
             <option value="AC">AC</option>
             <option value="AL">AL</option>
@@ -83,10 +86,11 @@
             <option value="SE">SE</option>
             <option value="TO">TO</option>
           </select>
+          <p class="errorMessage ufCrmError">Selecione o UF do seu CRM.</p>
         </label>
 
         <label for="especialidade">Especialidade
-          <select id="especialidade" name="especialidade">
+          <select id="especialidade" name="especialidade" class="especiality">
             <option value="">Selecione uma especialidade</option>
             <option value="clinico">Clínico Geral</option>
             <option value="cardiologia">Cardiologia</option>
@@ -98,14 +102,31 @@
             <option value="dermatologia">Dermatologia</option>
             <!-- Adicione mais se quiser -->
           </select>
+          <p class="errorMessage especialityError">Selecione sua especialidade.</p>
         </label>
       </div>
 
       <label for="password"> Digite sua senha
-        <input type="password" required class="password">
+        <input type="password" required class="password" aria-describedby="tooltip1"
+        placeholder="Sua senha precisa ter pelo menos 6 caracteres"> 
+
+        <!-- <input type="text" aria-describedby="tooltip1"> -->
+        <div id="tooltip1" role="tooltip">
+          Recomendamos que sua senha tenha pelo menos: 
+          <br>
+          <ol>
+            <li>6 caracteres.</li>
+            <li>1 letra minúscula.</li>
+            <li>1 letra maiúscula.</li>
+            <li>1 caractere especial.</li>
+          </ol>
+      </div>
+
+        <p class="errorMessage passwordError">Digite sua senha.</p>
       </label>
       <label for="password_confirm"> Confirme sua senha
         <input type="password" required class="confirm_password">
+        <p class="errorMessage confirmPasswordError">As senhas não coincidem.</p>
       </label>
 
       <button>Registrar</button>
