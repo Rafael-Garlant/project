@@ -1,0 +1,33 @@
+/* IMPORTANTE: Este arquivo depende do register-login-base.css para as variáveis e estilos gerais */
+
+/* Animação e Estilos de Erro */
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.input-error {
+  box-shadow: 0 0 6px var(--lightRed);
+  animation: shake 0.3s ease;
+}
+
+.errorMessage, .fullNameError, .emailError, .passwordError, .confirmPasswordError {
+  color: var(--darkRed);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  animation: shake 0.3s ease;
+  display: none;
+}
+
+/* Tooltips */
+[role="tooltip"] {
+  display: none;
+}
+
+input:focus + [role="tooltip"] {
+  display: block;
+}

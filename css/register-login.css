@@ -47,7 +47,7 @@ h1 {
   color: var(--blue);
 }
 
-
+/* Estilos de Fieldset e Legend (ainda que redundante no registro do médico, mas mantido para a estética) */
 form fieldset {
   border: 2px solid var(--grayMedium);
   border-radius: 8px;
@@ -71,7 +71,7 @@ form legend {
   font-size: 1.1rem;
   padding: 0 8px;
   color: var(--blue);
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -79,9 +79,7 @@ form legend {
 form fieldset label {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   gap: 8px;
-
   font-weight: 500;
   cursor: pointer;
   user-select: none;
@@ -92,7 +90,7 @@ form fieldset input[type="radio"] {
   accent-color: var(--blue);
 }
 
-
+/* Estilos de Label e Input Comuns */
 form label {
   display: block;
   text-align: left;
@@ -118,6 +116,7 @@ form input:focus {
   box-shadow: 0 0 6px var(--lightBlue);
 }
 
+/* Botão de Registrar */
 button {
   width: 100%;
   background-color: var(--blue);
@@ -136,6 +135,7 @@ button:hover {
   background-color: var(--darkBlue);
 }
 
+/* Texto de Link e Parágrafo */
 p {
   margin-top: 20px;
   font-size: 0.95rem;
@@ -152,73 +152,4 @@ p a {
 p a:hover {
   color: var(--darkGreen);
   text-decoration: underline;
-}
-
-#campos-medico {
-  margin-top: 25px;
-  padding: 20px;
-  background-color: var(--grayLight);
-  border: 2px solid var(--grayMedium);
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 77, 122, 0.05);
-  transition: all 0.3s ease;
-  margin-bottom: 15px;
-  display: none;
-}
-
-#campos-medico label {
-  display: block;
-  margin-bottom: 15px;
-  font-weight: 500;
-  color: var(--darkBlue);
-}
-
-#campos-medico input[type="text"],
-#campos-medico select {
-  width: 100%;
-  padding: 12px 14px;
-  margin-top: 6px;
-  border: 1.8px solid var(--grayMedium);
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background-color: var(--white);
-  color: var(--darkBlue);
-}
-
-#campos-medico input:focus,
-#campos-medico select:focus {
-  outline: none;
-  border-color: var(--blue);
-  box-shadow: 0 0 6px var(--lightBlue);
-}
-
-
-@keyframes shake {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-5px); }
-  50%  { transform: translateX(5px); }
-  75%  { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.input-error {
-  box-shadow: 0 0 6px var(--lightRed);
-  animation: shake 0.3s ease;
-}
-
-.errorMessage, .emailError, .crmError, .ufCrmError, .especialityError, .passwordError, .confirmPasswordError {
-  color: var(--darkRed);
-  font-size: 0.9rem;
-  margin-top: 5px;
-  animation: shake 0.3s ease;
-  display: none;
-}
-
-[role="tooltip"] {
-  display: none;
-}
-
-input:focus + [role="tooltip"] {
-  display: block;
 }

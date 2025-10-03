@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="../css/register-login.css">
+  <link rel="stylesheet" href="../css/register-patient.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Bem-Vindo(a) ao seu cadastro!</h1>
+
+    <form action="" novalidate>
+      <fieldset>
+        <legend>Você é:</legend>
+        <label>
+          Paciente
+        </label>
+      </fieldset>
+
+      <label for="full_name"> Nome completo
+        <input type="text" required class="full_name">
+        <p class="errorMessage">Digite seu nome completo.</p>
+      </label>
+
+      <label for="email"> Seu E-mail
+        <input type="email" required class="email">
+        <p class="errorMessage emailError">Digite seu email.</p>
+      </label>
+
+      <label for="password"> Digite sua senha
+        <input type="password" required class="password" aria-describedby="tooltip1"
+          placeholder="Sua senha precisa ter pelo menos 6 caracteres">
+
+        <!-- <input type="text" aria-describedby="tooltip1"> -->
+        <div id="tooltip1" role="tooltip">
+          Recomendamos que sua senha tenha pelo menos:
+          <br>
+          <ol>
+            <li>6 caracteres.</li>
+            <li>1 letra minúscula.</li>
+            <li>1 letra maiúscula.</li>
+            <li>1 caractere especial.</li>
+          </ol>
+        </div>
+
+        <p class="errorMessage passwordError">Digite sua senha.</p>
+      </label>
+      <label for="password_confirm"> Confirme sua senha
+        <input type="password" required class="confirm_password">
+        <p class="errorMessage confirmPasswordError">As senhas não coincidem.</p>
+      </label>
+
+      <button>Registrar</button>
+      <p>Já possui login? <a href="login.html">Clique aqui</a></p>
+      <p>Você é médico? <a href="register-doctor.html">Clique aqui</a></p>
+    </form>
+  </div>
+
+  <script src="../js/validationFormPatient.js"></script>
+</body>
+
+</html>

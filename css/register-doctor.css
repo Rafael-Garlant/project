@@ -1,0 +1,78 @@
+/* IMPORTANTE: Este arquivo depende do register-login-base.css para as variáveis e estilos gerais */
+
+/* Animação e Estilos de Erro (Comuns a ambos os formulários agora, mas mantidos separados para a modularidade do CSS) */
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  50%  { transform: translateX(5px); }
+  75%  { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.input-error {
+  box-shadow: 0 0 6px var(--lightRed);
+  animation: shake 0.3s ease;
+}
+
+.errorMessage, .fullNameError, .emailError, .crmError, .ufCrmError, .especialityError, .passwordError, .confirmPasswordError {
+  color: var(--darkRed);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  animation: shake 0.3s ease;
+  display: none;
+}
+
+/* Tooltips */
+[role="tooltip"] {
+  display: none;
+}
+
+input:focus + [role="tooltip"] {
+  display: block;
+}
+
+
+/* Estilos Específicos da Seção Médico */
+#campos-medico {
+  /* No formulário do médico, esta seção deve ser sempre exibida por padrão. 
+     Se o display: none estiver no CSS original, remova ou defina como 'block' 
+     aqui, embora no HTML essa seção deve ser tratada como parte do form. */
+  margin-top: 25px;
+  padding: 20px;
+  background-color: var(--grayLight);
+  border: 2px solid var(--grayMedium);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 77, 122, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  /* display: none; <-- REMOVIDO pois agora está em uma tela separada! */
+}
+
+#campos-medico label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--darkBlue);
+}
+
+#campos-medico input[type="text"],
+#campos-medico input[type="number"],
+#campos-medico select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1.8px solid var(--grayMedium);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: var(--white);
+  color: var(--darkBlue);
+}
+
+#campos-medico input:focus,
+#campos-medico select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 6px var(--lightBlue);
+}
